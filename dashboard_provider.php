@@ -162,7 +162,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete_recommendation'
         </div>
         
         <div class="mt-6">
-            <a href="edit_profile.php" class="text-primary hover:underline flex items-center">
+            <a href="mailto:energytrack@gmail.com" class="text-primary hover:underline flex items-center">
                 <i class="fas fa-edit mr-1"></i> Edit Company Profile
             </a>
         </div>
