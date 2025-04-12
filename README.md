@@ -34,6 +34,13 @@ A web application designed to help homeowners track, analyze, and optimize their
   - Session-based authentication
   - Prepared SQL statements for security
 
+## For AI functionality :-
+- Provide GEMINI_API_KEY in get_ai_insights.php
+  
+  ```
+   $api_key = 'YOUR_API_KEY';
+  ```
+
 ## Project Structure
 
 - `config/`: Database configuration and connection
