@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "@fontsource/poppins": "^5.2.5",
+    "@fortawesome/fontawesome-free": "^6.7.2",
+    "@tailwindcss/cli": "^4.1.4",
+    "chart.js": "^4.4.9",
+    "tailwindcss": "^4.1.4"
+  },
+  "name": "energy",
+  "version": "1.0.0",
+  "description": "A web application designed to help homeowners track, analyze, and optimize their energy consumption with the help of energy service providers.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

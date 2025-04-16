@@ -98,6 +98,8 @@ include 'includes/header.php';
                     <option value="electricity" <?php echo $energy_type == 'electricity' ? 'selected' : ''; ?>>Electricity</option>
                     <option value="gas" <?php echo $energy_type == 'gas' ? 'selected' : ''; ?>>Gas</option>
                     <option value="water" <?php echo $energy_type == 'water' ? 'selected' : ''; ?>>Water</option>
+                    <option value="solar" <?php echo $energy_type == 'solar' ? 'selected' : ''; ?>>Solar</option>
+                    <option value="other" <?php echo $energy_type == 'other' ? 'selected' : ''; ?>>Other</option>
                 </select>
             </div>
             <div class="flex items-end">
@@ -169,7 +171,7 @@ include 'includes/header.php';
             </div>
         </div>
 
-        <div class="flex h-96 gap-6">
+        <div class="flex lg:flex-row flex-col gap-6">
 
             <!--comparison -->
             <div class="bg-gray-50 p-4 rounded-lg mb-6 h-full">
@@ -337,8 +339,11 @@ include 'includes/header.php';
                         data: <?php echo json_encode($totals); ?>,
                         backgroundColor: [
                             'rgb(255, 99, 132)',
-                            'rgb(54, 162, 235)',
-                            'rgb(255, 205, 86)'
+                            'rgb(54, 162, 235)', 
+                            'rgb(255, 205, 86)',
+                            'rgb(153, 102, 255)',
+                            'rgb(75, 192, 192)',
+                            'rgb(255, 159, 64)'
                         ]
                     }]
                 },

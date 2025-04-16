@@ -96,7 +96,7 @@ echo json_encode(['response' => $response]);
 
 function callGeminiAPI($message, $data) {
     // Key
-    $api_key = 'AIzaSyAm50IvIVoVjW44quJ-b_WhlOVYeazHCr4';
+    $api_key = 'AIzaSyCzVzIM-1CRKbxVez3wsb34l4-zvds_7LU';
     
     // Prompting
     $prompt = "You are an energy efficiency expert specializing in Indian households. Provide concise, practical insights based on this data. Focus only on energy analysis, predictions, and recommendations. Assume typical Indian household patterns and rates.\n\n";
