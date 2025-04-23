@@ -139,7 +139,7 @@ foreach ($recommendations as $rec) {
         </div>
         
         <div class="flex justify-between">
-            <button type="submit" class="bg-primary text-white font-semibold py-2 px-6 rounded-lg hover:bg-primary/90 transition">
+            <button type="submit" class="bg-primary text-white cursor-pointer font-semibold py-2 px-6 rounded-lg hover:bg-primary/90 transition">
                 <i class="fas fa-search mr-2"></i> Search
             </button>
             

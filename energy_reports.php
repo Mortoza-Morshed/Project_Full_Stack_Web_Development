@@ -159,13 +159,13 @@ include 'includes/header.php';
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
             <div class="bg-gray-50 p-4 rounded-lg">
                 <h3 class="text-lg font-semibold mb-4">Energy Usage Over Time</h3>
-                <div style="height: 300px; ">
+                <div class="h-[300px]">
                     <canvas id="usageChart"></canvas>
                 </div>
             </div>
             <div class="bg-gray-50 p-4 rounded-lg">
                 <h3 class="text-lg font-semibold mb-4">Consumption by Type</h3>
-                <div style="height: 300px;" class="w-full  flex justify-center items-center">
+                <div class="h-[300px] flex justify-center items-center">
                     <canvas id="typeChart"></canvas>
                 </div>
             </div>
@@ -253,8 +253,6 @@ include 'includes/header.php';
             let formattedResponse = data.response
                 .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') // Bold text
                 .replace(/\n/g, '<br>') // Line breaks
-                .replace(/\d+\.\s+(.*?)(?=\d+\.|$)/g, '<div class="ml-4 mb-2">$1</div>') // Numbered lists
-                .replace(/\*\s+(.*?)(?=\n|$)/g, '<div class="ml-4 mb-2">• $1</div>'); // Bullet points
 
             // actual response
             const aiResponse = chatDiv.lastElementChild.lastElementChild;
@@ -317,7 +315,7 @@ include 'includes/header.php';
                         label: 'Energy Usage',
                         data: <?php echo json_encode($values); ?>,
                         borderColor: 'rgb(75, 192, 192)',
-                        tension: 0.1
+                        // tension: 0.1
                     }]
                 },
             });

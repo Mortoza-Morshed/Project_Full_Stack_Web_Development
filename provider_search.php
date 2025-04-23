@@ -164,21 +164,21 @@ $stmt->close();
                             <h3 class="text-lg font-semibold"><?php echo htmlspecialchars($provider['company_name']); ?></h3>
                         </div>
                         <div class="p-4 space-y-2">
-                            <div class="flex">
-                                <i class="fas fa-map-marker-alt text-gray-500 w-6"></i>
+                            <div class="flex items-start gap-2">
+                                <i class="fas fa-map-marker-alt pt-1 text-gray-500 w-6"></i>
                                 <p><?php echo htmlspecialchars($provider['location']); ?></p>
                             </div>
-                            <div class="flex">
-                                <i class="fas fa-tools text-gray-500 w-6"></i>
+                            <div class="flex items-start gap-2">
+                                <i class="fas fa-tools pt-1 text-gray-500 w-6"></i>
                                 <p class="flex-1"><?php echo htmlspecialchars($provider['services']); ?></p>
                             </div>
-                            <div class="flex">
-                                <i class="fas fa-leaf text-gray-500 w-6"></i>
+                            <div class="flex items-start gap-2">
+                                <i class="fas fa-leaf pt-1 text-gray-500 w-6"></i>
                                 <p class="flex-1 text-sm"><?php echo htmlspecialchars($provider['sustainability_practices']); ?></p>
                             </div>
                             <div class="pt-3 border-t mt-2">
                                 <a href="mailto:<?php echo htmlspecialchars($provider['email']); ?>" class="inline-flex items-center text-primary hover:underline">
-                                    <i class="fas fa-envelope mr-1"></i> Contact Provider
+                                    <i class="fas fa-envelope mr-2"></i> Contact Provider
                                 </a>
                             </div>
                         </div>
@@ -194,7 +194,7 @@ $stmt->close();
     <?php else: ?>
         <div class="bg-blue-50 rounded-lg p-6 text-center">
             <h2 class="text-xl font-semibold text-blue-800 mb-2">Find Sustainable Energy Service Providers</h2>
-            <p class="text-blue-700 mb-4">Use the search filters above to find providers in your area that offer the services you need.</p>
+            <p class="text-blue-700 text-md mb-4">Use the search filters above to find providers in your area that offer the services you need.</p>
             <p class="text-blue-600 text-sm">All providers are verified and committed to sustainable energy practices.</p>
         </div>
     <?php endif; ?>

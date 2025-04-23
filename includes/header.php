@@ -15,6 +15,14 @@
         body {
             font-family: 'Poppins', sans-serif;
         }
+        #mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+        #mobile-menu.active {
+            max-height: 500px;
+        }
     </style>
 
     <!-- For cdn -->
@@ -60,11 +68,11 @@
                     <a href="logout.php" class=" hover:text-gray-200 py-2 px-3">Logout</a>
                 <?php endif; ?>
             </div>
-            <button class="xl:hidden text-white" id="mobile-menu-button">
+            <button class="xl:hidden text-white cursor-pointer" id="mobile-menu-button">
                 <i class="fas fa-bars"></i>
             </button>
         </div>  
-        <div class="hidden xl:hidden bg-primary" id="mobile-menu">
+        <div class="xl:hidden bg-primary" id="mobile-menu">
             <div class="container mx-auto px-4 py-2 flex flex-col space-y-2">
                 <a href="index.php" class="text-white hover:underline py-2">Home</a>
                 <?php if(!isset($_SESSION['user_id'])): ?>
@@ -88,6 +96,11 @@
             </div>
         </div>
     </nav>
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('active');
+        }); 
+    </script>
     
     <main class="container mx-auto px-4 py-8">
         <?php if(isset($_SESSION['message'])): ?>

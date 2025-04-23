@@ -91,3 +91,6 @@ A web application designed to help homeowners track, analyze, and optimize their
 ## Default Admin Access
 - Email: admin@energy.com
 - Password: admin123
+
+
+#For installing styles , RUN:- npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch

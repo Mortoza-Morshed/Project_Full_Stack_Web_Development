@@ -14,7 +14,9 @@ $name = $_SESSION['name'];
 $total_usage = [
     'electricity' => 0,
     'gas' => 0,
-    'other' => 0
+    'water' => 0,
+    'other' => 0,
+    'solar' => 0
 ];
 
 $current_month = date('Y-m');
@@ -78,12 +80,20 @@ $stmt->close();
             <?php if ($has_energy_data): ?>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div class="bg-blue-50 rounded-lg p-4 text-center">
-                        <p class="text-gray-500 mb-1">Electricity</p>
+                        <p class="text-gray-500 mb-1">Electricity</p> 
                         <p class="text-3xl font-bold text-blue-600"><?php echo number_format($total_usage['electricity'], 1); ?> <span class="text-sm">kWh</span></p>
                     </div>
                     <div class="bg-orange-50 rounded-lg p-4 text-center">
                         <p class="text-gray-500 mb-1">Gas</p>
                         <p class="text-3xl font-bold text-orange-600"><?php echo number_format($total_usage['gas'], 1); ?> <span class="text-sm">therms</span></p>
+                    </div>
+                    <div class="bg-cyan-50 rounded-lg p-4 text-center">
+                        <p class="text-gray-500 mb-1">Water</p>
+                        <p class="text-3xl font-bold text-cyan-600"><?php echo number_format($total_usage['water'], 1); ?> <span class="text-sm">m3</span></p>
+                    </div>
+                    <div class="bg-yellow-50 rounded-lg p-4 text-center">
+                        <p class="text-gray-500 mb-1">Solar</p>
+                        <p class="text-3xl font-bold text-yellow-600"><?php echo number_format($total_usage['solar'], 1); ?> <span class="text-sm">kWh</span></p>
                     </div>
                     <div class="bg-green-50 rounded-lg p-4 text-center">
                         <p class="text-gray-500 mb-1">Other</p>

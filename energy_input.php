@@ -181,9 +181,9 @@ $stmt->close();
                                 <option value="other">Other</option>
                             </select>
                         </div>
-                    </div>
+                    <!-- </div> -->
                     
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- <div class="grid grid-cols-1 md:grid-cols-2 gap-4"> -->
                         <div>
                             <label for="consumption_value" class="block text-gray-700 font-medium mb-2">Consumption Value</label>
                             <input type="number" id="consumption_value" name="consumption_value" step="0.01" min="0" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" required>
@@ -204,7 +204,7 @@ $stmt->close();
                     </div>
                     
                     <div>
-                        <button type="submit" class="bg-primary text-white font-semibold py-2 px-6 rounded-lg hover:bg-primary/90 transition">Save Entry</button>
+                        <button type="submit" class="bg-primary text-white font-semibold py-2 px-6 rounded-lg cursor-pointer hover:bg-primary/90 transition">Save Entry</button>
                     </div>
                 </form>
             </div>
@@ -213,16 +213,31 @@ $stmt->close();
             <div>
                 <h2 class="text-xl font-semibold mb-4">Bulk Upload</h2>
                 <form action="energy_input.php" method="post" enctype="multipart/form-data" class="space-y-4">
-                    <div>
-                        <label for="energy_data_file" class="block text-gray-700 font-medium mb-2">Upload CSV File</label>
-                        <input type="file" id="energy_data_file" name="energy_data_file" accept=".csv" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
-                        <p class="text-sm text-gray-500 mt-1">CSV format: date, energy_type, consumption_value, unit</p>
-                        <p class="text-sm text-gray-500">Example: 2023-10-01, electricity, 100, kWh</p>
+                    <div class="flex flex-col items-center justify-center w-full">
+                        <label for="energy_data_file" class="flex flex-col items-center justify-center w-full h-48 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100">
+                            <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                                <i class="fas fa-cloud-upload-alt text-4xl text-gray-500 mb-4"></i>
+                                <p class="mb-2 text-sm text-gray-500"><span class="font-semibold">Click to upload</span> or drag and drop</p>
+                                <p class="text-xs text-gray-500">CSV files only</p>
+                            </div>
+                            <input type="file" id="energy_data_file" name="energy_data_file" accept=".csv" class="hidden">
+                        </label>
+                        <div class="mt-4 text-center">
+                            <p class="text-sm text-gray-600 font-medium">CSV Format Required:</p>
+                            <p class="text-xs text-gray-500">date, energy_type, consumption_value, unit</p>
+                            <p class="text-xs text-gray-500 italic">Example: 2023-10-01, electricity, 100, kWh</p>
+                        </div>
                     </div>
                     
-                    <div>
-                        <button type="submit" class="bg-secondary text-white font-semibold py-2 px-6 rounded-lg hover:bg-secondary/90 transition">Upload File</button>
-                        <a href="#" class="text-secondary hover:underline ml-2 text-sm">Download Template</a>
+                    <div class="flex items-center justify-center gap-4 mt-6">
+                        <button type="submit" class="bg-secondary text-white font-semibold py-2 px-6 rounded-lg hover:bg-secondary/90 transition cursor-pointer flex items-center">
+                            <i class="fas fa-upload mr-2"></i>
+                            Upload File
+                        </button>
+                        <a href="#" class="text-secondary hover:text-secondary/80 transition flex items-center">
+                            <i class="fas fa-download mr-2"></i>
+                            Download Template
+                        </a>
                     </div>
                 </form>
             </div>
