@@ -254,7 +254,7 @@ include 'includes/header.php';
                 .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') // Bold text
                 .replace(/\n/g, '<br>') // Line breaks
 
-            // actual response
+            
             const aiResponse = chatDiv.lastElementChild.lastElementChild;
             aiResponse.innerHTML = `<strong>AI:</strong> ${formattedResponse}`;
             

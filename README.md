@@ -94,3 +94,4 @@ A web application designed to help homeowners track, analyze, and optimize their
 
 
 #For installing styles , RUN:- npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch
+# cdn :-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>

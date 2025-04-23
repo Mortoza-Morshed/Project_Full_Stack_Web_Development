@@ -41,31 +41,32 @@
     </script>
 </head>
 <body class="bg-gray-50">
-    <nav class="bg-primary text-white shadow-md">
+    <nav class="bg-primary text-white shadow-md relative z-30">
+        <!-- <div class="absolute bg-gray-900/45 top-0 left-0 w-full -z-10 h-full"></div> -->
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
             <a href="index.php" class="text-2xl font-bold flex items-center">
                 <img src="/Energy/images/weblogo.jpg" alt="logo" class="w-12 h-12 rounded-full  mr-2">
                 <span>EnergyTrack</span>
             </a>
             <div class="hidden xl:flex space-x-4">
-                <a href="index.php" class="hover:text-gray-200 py-2 px-3">Home</a>
+                <a href="index.php" class=" hover:text-primary py-2 px-3 hover:bg-gray-50 transition-all duration-300 rounded-md">Home</a>
                 <?php if(!isset($_SESSION['user_id'])): ?>
-                    <a href="login.php" class=" hover:text-gray-200 py-2 px-3">Login</a>
-                    <a href="register.php" class=" hover:text-gray-200 py-2 px-3">Register</a>
+                    <a href="login.php" class="  hover:text-primary py-2 px-3 hover:bg-gray-50 transition-all duration-300 rounded-md">Login</a>
+                    <a href="register.php" class=" hover:text-primary py-2 px-3 hover:bg-gray-50 transition-all duration-300 rounded-md">Register</a>
                 <?php else: ?>
                     <?php if($_SESSION['role'] == 'homeowner'): ?>
-                        <a href="dashboard_homeowner.php" class=" hover:text-gray-200 py-2 px-3">Dashboard</a>
-                        <a href="energy_input.php" class=" hover:text-gray-200 py-2 px-3">Data Input</a>
-                        <a href="energy_reports.php" class=" hover:text-gray-200 py-2 px-3">Reports</a>
-                        <a href="provider_search.php" class=" hover:text-gray-200 py-2 px-3">Find Providers</a>
-                        <a href="recommendations.php" class=" hover:text-gray-200 py-2 px-3">Recommendations</a>
+                        <a href="dashboard_homeowner.php" class=" hover:text-primary py-2 px-3 hover:bg-gray-50 transition-all duration-300 rounded-md ">Dashboard</a>
+                        <a href="energy_input.php" class="  hover:text-primary py-2 px-3 hover:bg-gray-50 transition-all duration-300 rounded-md">Data Input</a>
+                        <a href="energy_reports.php" class="  hover:text-primary py-2 px-3 hover:bg-gray-50 transition-all duration-300 rounded-md">Reports</a>
+                        <a href="provider_search.php" class="  hover:text-primary py-2 px-3 hover:bg-gray-50 transition-all duration-300 rounded-md">Find Providers</a>
+                        <a href="recommendations.php" class=" hover:text-primary py-2 px-3 hover:bg-gray-50 transition-all duration-300 rounded-md">Recommendations</a>
                     <?php elseif($_SESSION['role'] == 'provider'): ?>
-                        <a href="dashboard_provider.php" class=" hover:text-gray-200 py-2 px-3">Dashboard</a>
-                        <a href="add_recommendation.php" class=" hover:text-gray-200 py-2 px-3">Add Recommendation</a>
+                        <a href="dashboard_provider.php" class="  hover:text-primary py-2 px-3 hover:bg-gray-50 transition-all duration-300 rounded-md">Dashboard</a>
+                        <a href="add_recommendation.php" class="  hover:text-primary py-2 px-3 hover:bg-gray-50 transition-all duration-300 rounded-md">Add Recommendation</a>
                     <?php elseif($_SESSION['role'] == 'admin'): ?>
-                        <a href="admin_dashboard.php" class=" hover:text-gray-200 py-2 px-3">Admin Dashboard</a>
+                        <a href="admin_dashboard.php" class="  hover:text-primary py-2 px-3 hover:bg-gray-50 transition-all duration-300 rounded-md">Admin Dashboard</a>
                     <?php endif; ?>
-                    <a href="logout.php" class=" hover:text-gray-200 py-2 px-3">Logout</a>
+                    <a href="logout.php" class="  hover:text-primary py-2 px-3 hover:bg-gray-50 transition-all duration-300 rounded-md">Logout</a>
                 <?php endif; ?>
             </div>
             <button class="xl:hidden text-white cursor-pointer" id="mobile-menu-button">
@@ -74,24 +75,24 @@
         </div>  
         <div class="xl:hidden bg-primary" id="mobile-menu">
             <div class="container mx-auto px-4 py-2 flex flex-col space-y-2">
-                <a href="index.php" class="text-white hover:underline py-2">Home</a>
+                <a href="index.php" class=" hover:text-primary py-2 px-3 hover:bg-gray-50 transition-all duration-300 rounded-md">Home</a>
                 <?php if(!isset($_SESSION['user_id'])): ?>
-                    <a href="login.php" class="text-white hover:underline py-2">Login</a>
-                    <a href="register.php" class="text-white hover:underline py-2">Register</a>
+                    <a href="login.php" class=" hover:text-primary py-2 px-3 hover:bg-gray-50 transition-all duration-300 rounded-md">Login</a>
+                    <a href="register.php" class=" hover:text-primary py-2 px-3 hover:bg-gray-50 transition-all duration-300 rounded-md">Register</a>
                 <?php else: ?>
                     <?php if($_SESSION['role'] == 'homeowner'): ?>
-                        <a href="dashboard_homeowner.php" class="text-white hover:underline py-2">Dashboard</a>
-                        <a href="energy_input.php" class="text-white hover:underline py-2">Data Input</a>
-                        <a href="energy_reports.php" class="text-white hover:underline py-2">Reports</a>
-                        <a href="provider_search.php" class="text-white hover:underline py-2">Find Providers</a>
-                        <a href="recommendations.php" class="text-white hover:underline py-2">Recommendations</a>
+                        <a href="dashboard_homeowner.php" class=" hover:text-primary py-2 px-3 hover:bg-gray-50 transition-all duration-300 rounded-md">Dashboard</a>
+                        <a href="energy_input.php" class=" hover:text-primary py-2 px-3 hover:bg-gray-50 transition-all duration-300 rounded-md">Data Input</a>
+                        <a href="energy_reports.php" class=" hover:text-primary py-2 px-3 hover:bg-gray-50 transition-all duration-300 rounded-md">Reports</a>
+                        <a href="provider_search.php" class=" hover:text-primary py-2 px-3 hover:bg-gray-50 transition-all duration-300 rounded-md">Find Providers</a>
+                        <a href="recommendations.php" class=" hover:text-primary py-2 px-3 hover:bg-gray-50 transition-all duration-300 rounded-md">Recommendations</a>
                     <?php elseif($_SESSION['role'] == 'provider'): ?>
-                        <a href="dashboard_provider.php" class="text-white hover:underline py-2">Dashboard</a>
-                        <a href="add_recommendation.php" class="text-white hover:underline py-2">Add Recommendation</a>
+                        <a href="dashboard_provider.php" class=" hover:text-primary py-2 px-3 hover:bg-gray-50 transition-all duration-300 rounded-md">Dashboard</a>
+                        <a href="add_recommendation.php" class=" hover:text-primary py-2 px-3 hover:bg-gray-50 transition-all duration-300 rounded-md">Add Recommendation</a>
                     <?php elseif($_SESSION['role'] == 'admin'): ?>
-                        <a href="admin_dashboard.php" class="text-white hover:underline py-2">Admin Dashboard</a>
+                        <a href="admin_dashboard.php" class=" hover:text-primary py-2 px-3 hover:bg-gray-50 transition-all duration-300 rounded-md">Admin Dashboard</a>
                     <?php endif; ?>
-                    <a href="logout.php" class="text-white hover:underline py-2">Logout</a>
+                    <a href="logout.php" class=" hover:text-primary py-2 px-3 hover:bg-gray-50 transition-all duration-300 rounded-md">Logout</a>
                 <?php endif; ?>
             </div>
         </div>

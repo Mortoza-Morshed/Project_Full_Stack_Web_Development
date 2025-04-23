@@ -100,8 +100,8 @@ $stmt->close();
                         <p class="text-3xl font-bold text-green-600"><?php echo number_format($total_usage['other'], 1); ?> <span class="text-sm">units</span></p>
                     </div>
                 </div>
-                <div class="mt-6 text-center">
-                    <a href="energy_reports.php" class="inline-block bg-secondary text-white py-2 px-4 rounded-lg hover:bg-secondary/90 transition">View Detailed Reports</a>
+                <div class="mt-6 text-right">
+                    <a href="energy_reports.php" class="inline-block bg-primary/95 text-white py-2 px-4 rounded-lg hover:bg-primary/80 transition">View Detailed Reports</a>
                 </div>
             <?php else: ?>
                 <div class="bg-gray-50 rounded-lg p-8 text-center">

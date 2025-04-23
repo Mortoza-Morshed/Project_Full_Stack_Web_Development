@@ -190,20 +190,20 @@ $stmt->close();
                                     <td class="px-4 py-3 text-sm capitalize"><?php echo htmlspecialchars($reg['role']); ?></td>
                                     <td class="px-4 py-3 text-sm"><?php echo date('M j, Y', strtotime($reg['created_at'])); ?></td>
                                     <td class="px-4 py-3 text-sm">
-                                        <button type="button" class="text-blue-600 hover:text-blue-800" onclick="viewDetails(<?php echo $reg['user_id']; ?>)">
+                                        <button type="button" class="text-blue-600 hover:text-blue-800 cursor-pointer" onclick="viewDetails(<?php echo $reg['user_id']; ?>)">
                                             <i class="fas fa-info-circle mr-1"></i> Details
                                         </button>
                                         <form method="post" action="admin_dashboard.php" class="inline ml-2" onsubmit="return confirm('Are you sure you want to approve this user?');">
                                             <input type="hidden" name="user_id" value="<?php echo $reg['user_id']; ?>">
                                             <input type="hidden" name="action" value="approve">
-                                            <button type="submit" class="text-green-600 hover:text-green-800">
+                                            <button type="submit" class="text-green-600 hover:text-green-800 cursor-pointer">
                                                 <i class="fas fa-check mr-1"></i> Approve
                                             </button>
                                         </form>
                                         <form method="post" action="admin_dashboard.php" class="inline ml-2" onsubmit="return confirm('Are you sure you want to reject this user?');">
                                             <input type="hidden" name="user_id" value="<?php echo $reg['user_id']; ?>">
                                             <input type="hidden" name="action" value="reject">
-                                            <button type="submit" class="text-red-600 hover:text-red-800">
+                                            <button type="submit" class="text-red-600 hover:text-red-800 cursor-pointer">
                                                 <i class="fas fa-times mr-1"></i> Reject
                                             </button>
                                         </form>
